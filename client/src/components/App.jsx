@@ -1,5 +1,6 @@
 import logo from "../images/logo.svg";
 import "../styling/App.css";
+import Login from "./Google/login.jsx";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           Learn React
         </a>
       </header>
+      <Login />
     </div>
   );
 };
