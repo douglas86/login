@@ -8,6 +8,6 @@ const userSchema = new Schema({
     thumbnail: String,
 });
 
-const User = mongoose.model('user', userSchema);
+const User = mongoose.model('google-user', userSchema);
 
 export default User;

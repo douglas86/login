@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
     res.render('home', { user: req.user });
 });
 
-const PORT = 3000;
+const PORT = 5000;
 
 app.listen(PORT, () => {
     console.log(`app now listening for requests on port ${PORT}`);
