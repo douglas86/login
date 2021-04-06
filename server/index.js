@@ -3,6 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 
 // importing routes
+import authRoutes from './routes/auth-routes'
 
 const app = express();
 

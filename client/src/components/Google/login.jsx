@@ -3,6 +3,10 @@ import axios from "axios";
 
 const handleSubmit = (googleData) => {
   console.log(googleData);
+  axios
+    .post("http://localhost:5000/api/google", { googleInfo: googleData })
+    .then((res) => console.log(res.data))
+    .catch((err) => console.log(err));
 };
 
 const Login = () => {
