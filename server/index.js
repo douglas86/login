@@ -1,9 +1,11 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import keys from "./config/keys";
 
 // importing routes
-import authRoutes from './routes/auth-routes'
+import authRoutes from "./routes/auth-routes";
 
 const app = express();
 
@@ -16,6 +18,23 @@ app.use(
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// connection for mongoose
+mongoose.connect(
+  keys.mongodb.dbURI,
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    connectTimeoutMS: 10000,
+    poolSize: 10,
+    writeConcern: {
+      j: true,
+    },
+  },
+  () => {
+    console.log("connected to mongodb");
+  }
+);
 
 app.use("/api", authRoutes);
 
