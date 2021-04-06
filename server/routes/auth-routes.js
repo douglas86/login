@@ -23,7 +23,7 @@ router.post("/google", (req, res) => {
         familyName: token.familyName,
       })
         .save()
-		// once saved to db
+        // once saved to db
         .then((newUser) => {
           console.log("new user created: " + newUser);
         });
