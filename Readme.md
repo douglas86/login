@@ -13,3 +13,5 @@ It asks you to login with google
 Then runs a check to see if a record was saved in db
 if record was saved before then it prints to console
 if record was not saved it then saves it to db
+Created the Login Folder
+Created an Input and Form component
