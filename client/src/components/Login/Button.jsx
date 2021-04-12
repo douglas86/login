@@ -10,7 +10,7 @@ const Btn = () => {
                 Submit
             </Button>
             <Button variant="primary" style={{ marginLeft: '10px' }} type="">
-                <a href="http://www.google.com" style={{ color: 'white' }}>
+                <a href="/register" style={{ color: 'white' }}>
                     Register
                 </a>
             </Button>
