@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import Context from './Context';
+import { useContext } from 'react';
+import { Context } from './Context';
 
 const Submit = () => {
     const User = useContext(Context);
