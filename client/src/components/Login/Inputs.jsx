@@ -1,9 +1,9 @@
 const Inputs = () => {
-  return (
-    <div>
-      <h3>inputs</h3>
-    </div>
-  );
+    return (
+        <div>
+            <h3>Please sign in below:</h3>
+        </div>
+    );
 };
 
 export default Inputs;

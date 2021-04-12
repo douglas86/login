@@ -1,9 +1,15 @@
+import Inputs from './Inputs';
+import { Provider } from './Context';
+
 const Form = () => {
-  return (
-    <div>
-      <h1>Login form</h1>
-    </div>
-  );
+    return (
+        <div>
+            <h2>Please, SignIn below:</h2>
+            <Provider>
+                <Inputs />
+            </Provider>
+        </div>
+    );
 };
 
 export default Form;
