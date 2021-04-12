@@ -1,15 +1,16 @@
 import Submit from './Submit';
+import { Button } from 'react-bootstrap';
 
-const Button = () => {
+const Btn = () => {
     const { handleSubmit } = Submit();
 
     return (
         <div>
-            <button type="submit" onClick={handleSubmit}>
+            <Button variant="primary" type="submit" onClick={handleSubmit}>
                 Submit
-            </button>
+            </Button>
         </div>
     );
 };
 
-export default Button;
+export default Btn;
