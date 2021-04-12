@@ -1,14 +1,11 @@
-import GoogleBtn from './Google/login.jsx';
-import LoginForm from './Login/Form.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useRoutes } from 'hookrouter';
+import routes from './router';
+import NotFound from './Pages/NotFound.jsx';
 
 const App = () => {
-    return (
-        <div>
-            <LoginForm />
-            <GoogleBtn />
-        </div>
-    );
+    const routerRoutes = useRoutes(routes);
+    return routerRoutes || <NotFound />;
 };
 
 export default App;
