@@ -1,10 +1,13 @@
 import Submit from './Submit';
+import useStyles from './styling';
 
 const Inputs = () => {
     const { handleInputChange } = Submit();
+    const classes = useStyles();
     return (
         <div>
             <input
+                className={classes.inputs}
                 type="text"
                 placeholder="Username goes here"
                 onChange={handleInputChange}
@@ -13,6 +16,7 @@ const Inputs = () => {
             />
             <br />
             <input
+                className={classes.inputs}
                 type="password"
                 placeholder="Password"
                 onChange={handleInputChange}

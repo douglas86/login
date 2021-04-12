@@ -9,6 +9,11 @@ const Btn = () => {
             <Button variant="primary" type="submit" onClick={handleSubmit}>
                 Submit
             </Button>
+            <Button variant="primary" style={{ marginLeft: '10px' }} type="">
+                <a href="http://www.google.com" style={{ color: 'white' }}>
+                    Register
+                </a>
+            </Button>
         </div>
     );
 };
