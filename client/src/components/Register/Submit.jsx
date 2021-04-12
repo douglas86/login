@@ -6,6 +6,11 @@ const Submit = () => {
 
     const handleSubmit = () => {
         console.log(User.data);
+        if (User.data.pName !== User.data.p2Name) {
+            alert('Passwords do not match');
+        } else {
+            alert('Passwords match');
+        }
     };
 
     const handleInputChange = (e) => {

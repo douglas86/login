@@ -2,7 +2,7 @@ import Submit from './Submit';
 import useStyles from './styles';
 
 const Inputs = () => {
-    const { handleInputSubmit } = Submit();
+    const { handleInputChange } = Submit();
     const classes = useStyles();
 
     return (
@@ -11,7 +11,8 @@ const Inputs = () => {
                 className={classes.inputs}
                 type="text"
                 placeholder="First Name"
-                onChange={handleInputSubmit}
+                onChange={handleInputChange}
+                name="fName"
                 required
             />
             <br />
@@ -19,7 +20,8 @@ const Inputs = () => {
                 className={classes.inputs}
                 type="text"
                 placeholder="Second Name"
-                onChange={handleInputSubmit}
+                onChange={handleInputChange}
+                name="lName"
                 required
             />
             <br />
@@ -27,7 +29,8 @@ const Inputs = () => {
                 className={classes.inputs}
                 type="text"
                 placeholder="Username"
-                onChange={handleInputSubmit}
+                onChange={handleInputChange}
+                name="uName"
                 required
             />
             <br />
@@ -35,7 +38,8 @@ const Inputs = () => {
                 className={classes.inputs}
                 type="password"
                 placeholder="Password"
-                onChange={handleInputSubmit}
+                onChange={handleInputChange}
+                name="pName"
                 required
             />
             <br />
@@ -43,7 +47,8 @@ const Inputs = () => {
                 className={classes.inputs}
                 type="password"
                 placeholder="Re enter Password"
-                onChange={handleInputSubmit}
+                onChange={handleInputChange}
+                name="p2Name"
                 required
             />
         </div>
