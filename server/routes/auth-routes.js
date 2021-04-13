@@ -9,7 +9,7 @@ router.post("/google", (req, res) => {
   User.findOne({
     googleId: token.googleId,
   }).then((currentUser) => {
-    // if used is in db
+    // if user is in db
     if (currentUser) {
       console.log("user is: ", currentUser);
       // if user not in db

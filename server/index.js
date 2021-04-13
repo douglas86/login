@@ -6,6 +6,7 @@ import keys from "./config/keys";
 
 // importing routes
 import authRoutes from "./routes/auth-routes";
+import userRoutes from "./routes/regular-routes";
 
 const app = express();
 
@@ -36,7 +37,9 @@ mongoose.connect(
   }
 );
 
+// routing
 app.use("/api", authRoutes);
+app.use("/user", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 
