@@ -10,18 +10,20 @@ router.post("/regular", (req, res) => {
   let token = req.body.user;
   const saltRounds = 10;
 
-  bcrypt.hash(token.pName, saltRounds, (hash) => {
+  bcrypt.hash(token.pName, saltRounds, (err, hash) => {
     new User({
       firstName: token.fName,
       lastName: token.lName,
       username: token.uName,
+      email: token.email,
       password: hash,
     })
       .save()
       .then((newUser) => {
         console.log("New user created: " + newUser);
       })
-      .catch((err) => console.log(err));
+      .then(console.log(token.email))
+      .catch(console.log(err));
   });
 });
 

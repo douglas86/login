@@ -14,6 +14,8 @@ const Submit = () => {
       axios
         .post("http://localhost:5000/user/regular", { user: User.data })
         .then((res) => console.log(res.data))
+		// once post to db redirect to home page
+		.then((window.location = "/"))
         .catch((err) => console.log(err));
     }
   };
