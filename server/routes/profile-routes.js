@@ -4,6 +4,8 @@ import bcrypt from "bcrypt";
 
 const router = express.Router();
 
+let current = [];
+
 router.post("/login", (req, res) => {
   let token = req.body.user;
   console.log(token);
@@ -12,10 +14,9 @@ router.post("/login", (req, res) => {
   })
     .then((currentUser) => {
       if (currentUser) {
-        console.log("user is: ", currentUser.password);
         bcrypt.compare(token.pName, currentUser.password, (err, result) => {
           if (result) {
-            console.log(true);
+            current.push(currentUser);
           } else {
             console.log(false);
           }
@@ -25,6 +26,10 @@ router.post("/login", (req, res) => {
       }
     })
     .catch((err) => console.log(err));
+});
+
+router.get("/login", (req, res) => {
+  res.send(current);
 });
 
 export default router;

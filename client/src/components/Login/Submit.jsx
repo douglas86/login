@@ -6,10 +6,11 @@ const Submit = () => {
   const User = useContext(Context);
 
   const handleSubmit = () => {
-    console.log(User.data);
+    const url = "http://localhost:5000/profile/login";
     axios
-      .post("http://localhost:5000/profile/login", { user: User.data })
-      .then(console.log("Data sent successfully"));
+      .post(url, { user: User.data })
+      .then(axios.get(url).then((res) => console.log(res)))
+      .catch((err) => console.log(err));
   };
 
   const handleInputChange = (e) => {
