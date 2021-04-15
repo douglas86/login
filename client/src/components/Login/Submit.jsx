@@ -7,7 +7,9 @@ const Submit = () => {
 
   const handleSubmit = () => {
     console.log(User.data);
-    axios.post("http://localhost:5000/profile/login", { user: User.data });
+    axios
+      .post("http://localhost:5000/profile/login", { user: User.data })
+      .then(console.log("Data sent successfully"));
   };
 
   const handleInputChange = (e) => {

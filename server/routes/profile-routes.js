@@ -1,5 +1,6 @@
 import express from "express";
 import User from "../model/regular-users";
+import bcrypt from "bcrypt";
 
 const router = express.Router();
 
@@ -11,7 +12,14 @@ router.post("/login", (req, res) => {
   })
     .then((currentUser) => {
       if (currentUser) {
-        console.log("user is: ", currentUser);
+        console.log("user is: ", currentUser.password);
+        bcrypt.compare(token.pName, currentUser.password, (err, result) => {
+          if (result) {
+            console.log(true);
+          } else {
+            console.log(false);
+          }
+        });
       } else {
         console.log("Please register as a user");
       }
