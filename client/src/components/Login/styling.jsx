@@ -1,13 +1,25 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
+import "../../styling/Login.css";
 
-const useStyles = makeStyles({
-    form: {
-        margin: '2px 25% 10px 25%',
-    },
-    inputs: {
-        marginTop: '5px',
-        marginBottom: '5px',
-    },
-});
+const useStyles = makeStyles((theme) => ({
+  form: {
+    marginTop: "3.5%",
+    textAlign: "center",
+  },
+  inputs: {
+    marginTop: "3px",
+    marginBottom: "3px",
+    width: "20%",
+  },
+  button: {
+    width: "20%",
+    marginBottom: "2px",
+  },
+  heading: {
+    ...theme.typography.button,
+    fontFamily: "Orelega One cursive",
+    fontSize: "50px",
+  },
+}));
 
 export default useStyles;
