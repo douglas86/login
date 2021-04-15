@@ -6,6 +6,12 @@ const useStyles = makeStyles({
     padding: "10%",
     textAlign: "center",
   },
+  register: {
+    backgroundColor: "#dae2f0",
+    padding: "8%",
+    textAlign: "center",
+    marginBottom: "2%",
+  },
 });
 
 export default useStyles;

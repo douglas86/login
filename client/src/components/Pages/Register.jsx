@@ -1,11 +1,13 @@
-import Form from '../Register/Form';
+import Form from "../Register/Form";
+import useStyles from "./styles";
 
 const Register = () => {
-    return (
-        <div>
-            <Form />
-        </div>
-    );
+  const classes = useStyles();
+  return (
+    <div className={classes.register}>
+      <Form />
+    </div>
+  );
 };
 
 export default Register;

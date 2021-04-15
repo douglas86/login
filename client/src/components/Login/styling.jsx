@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/core/styles";
-import "../../styling/Login.css";
 
 const useStyles = makeStyles((theme) => ({
   form: {
