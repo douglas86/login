@@ -2,14 +2,23 @@ import { useContext } from "react";
 import { Context } from "./Context";
 import axios from "axios";
 
+let current = [];
+
 const Submit = () => {
   const User = useContext(Context);
 
   const handleSubmit = () => {
-    const url = "http://localhost:5000/profile/login";
+    let url = "http://localhost:5000/profile/login";
+
     axios
-      .post(url, { user: User.data })
-      .then(axios.get(url).then((res) => console.log(res)))
+      .get(`${url}/${User.data.uName}/${User.data.pName}`)
+      .then((res) => {
+        if (res.data) {
+          window.location = "/profile";
+        } else {
+          console.log(res.data);
+        }
+      })
       .catch((err) => console.log(err));
   };
 
