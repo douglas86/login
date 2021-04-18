@@ -2,19 +2,20 @@ import { useContext } from "react";
 import { Context } from "./Context";
 import axios from "axios";
 
-let current = [];
-
 const Submit = () => {
   const User = useContext(Context);
 
   const handleSubmit = () => {
     let url = "http://localhost:5000/profile/login";
 
+    // passing username and password to express
     axios
       .get(`${url}/${User.data.uName}/${User.data.pName}`)
       .then((res) => {
+        // if password is true
         if (res.data) {
           window.location = "/profile";
+          // if password is false
         } else {
           console.log(res.data);
         }

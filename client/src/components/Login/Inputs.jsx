@@ -9,7 +9,7 @@ const Inputs = () => {
             <input
                 className={classes.inputs}
                 type="text"
-                placeholder="Username goes here"
+                placeholder="Username"
                 onChange={handleInputChange}
                 name="uName"
                 required
