@@ -12,6 +12,10 @@ const useStyles = makeStyles({
     textAlign: "center",
     marginBottom: "2%",
   },
+  profile: {
+    margin: "30px",
+    textAlign: "center",
+  },
 });
 
 export default useStyles;
