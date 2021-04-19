@@ -1,7 +1,7 @@
-import { Navbar } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import logo from "../../images/logo.svg";
 
-const Nav = () => {
+const Navs = () => {
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -15,9 +15,10 @@ const Nav = () => {
           />{" "}
           Sign Out
         </Navbar.Brand>
+        <Nav.Link href="/profile">Cards Dashboard</Nav.Link>
       </Navbar>
     </div>
   );
 };
 
-export default Nav;
+export default Navs;

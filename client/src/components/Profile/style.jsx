@@ -13,6 +13,16 @@ const useStyles = makeStyles({
     marginLeft: "15%",
     marginRight: "15%",
   },
+  leftForm: {
+    backgroundColor: "white",
+    padding: "10%",
+    borderRadius: "10px",
+    width: "100%",
+    fontSize: "95%",
+  },
+  control: {
+    marginTop: "2px",
+  },
 });
 
 export default useStyles;
