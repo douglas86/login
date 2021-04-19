@@ -13,13 +13,16 @@ const useStyles = makeStyles({
     marginLeft: "15%",
     marginRight: "15%",
   },
+  // Styling for the left form
   leftForm: {
     backgroundColor: "white",
     padding: "10%",
     borderRadius: "10px",
     width: "100%",
     fontSize: "95%",
+    marginTop: "20%",
   },
+  // styling for the form tags on the lefthand side
   control: {
     marginTop: "2px",
   },

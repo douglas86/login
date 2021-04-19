@@ -8,6 +8,7 @@ let current = "";
 
 router.get("/", (req, res) => {
   console.log(current);
+  res.send(current);
 });
 
 router.get("/login/:username/:password", (req, res) => {

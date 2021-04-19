@@ -1,10 +1,8 @@
 # The next task to be completed
-Create a sign in form on the home page
-The info on the form will then be saved to the db
-
-You will first be presented by a sign in page
-If you try to sign in 
-The record is not in db it will redirect you to a register page
+Store the username in a json file
+On the react side
+Re organise the Profile section in react
+To make it more readable
 
 # What I have done so far 
 Created a Google button at the bottom of the react display

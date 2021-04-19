@@ -11,11 +11,6 @@ const Left = () => {
           <Form.Control
             className={classes.control}
             type="text"
-            placeholder="Creator"
-          />
-          <Form.Control
-            className={classes.control}
-            type="text"
             placeholder="Title"
           />
           <Form.Control
