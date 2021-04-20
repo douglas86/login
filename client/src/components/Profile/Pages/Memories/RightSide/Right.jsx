@@ -1,8 +1,22 @@
 import { Form, Button } from "react-bootstrap";
 import useStyles from "../../../style.jsx";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Left = () => {
   const classes = useStyles();
+  const [data, setData] = useState({});
+
+  // Grabs data from user.json file in express
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/profile")
+      .then((res) => setData(res))
+      .catch((err) => console.log(err));
+  }, []);
+
+  console.log(data);
+
   return (
     <div className={classes.leftForm}>
       <Form>
