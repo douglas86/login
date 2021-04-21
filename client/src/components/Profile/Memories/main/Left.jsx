@@ -1,9 +1,11 @@
+import LeftSide from '../Left/LeftSide';
+
 const Left = () => {
-  return (
-    <div>
-      <h6>Left</h6>
-    </div>
-  );
+    return (
+        <div>
+            <LeftSide />
+        </div>
+    );
 };
 
 export default Left;

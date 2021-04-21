@@ -7,6 +7,10 @@ const memorySchema = new Schema({
     title: String,
     message: String,
     tags: String,
+    img: {
+        data: Buffer,
+        contentType: String,
+    },
 });
 
 const Memory = mongoose.model('memory', memorySchema);

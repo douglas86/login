@@ -6,6 +6,7 @@ import Memory from '../model/memory';
 
 const router = express.Router();
 
+// Store new  memory to db
 router.post('/memories', (req, res) => {
     let token = req.body.User;
     let username = req.body.username;
@@ -14,6 +15,10 @@ router.post('/memories', (req, res) => {
         title: token.title,
         message: token.message,
         tags: token.tags,
+        img: {
+            data: token.file,
+            contentType: 'image/png',
+        },
     })
         .save()
         .then((newUser) => {
@@ -22,12 +27,24 @@ router.post('/memories', (req, res) => {
         .catch((err) => console.log(err));
 });
 
+router.get('/memories', (req, res) => {
+    Memory.find({ username: 'douglas86' }, (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+// Grabbing the username from user.json file
 router.get('/', (req, res) => {
     let rawdata = fs.readFileSync('user.json');
     let user = JSON.parse(rawdata);
     res.send(user);
 });
 
+// Routing for loggin in a user
 router.get('/login/:username/:password', (req, res) => {
     let token = req.params;
     User.findOne({

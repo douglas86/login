@@ -6,6 +6,7 @@ const Submit = () => {
     const User = useContext(Context);
     const [data, setData] = useState({});
 
+    // grabs the username from json file in express
     useEffect(() => {
         axios
             .get('http://localhost:5000/profile')
@@ -13,6 +14,7 @@ const Submit = () => {
             .catch((err) => console.log(err));
     }, []);
 
+    // Handle submit once button is clicked for creating new memeories
     const handleSubmit = () => {
         axios
             .post('http://localhost:5000/profile/memories', {
@@ -21,21 +23,11 @@ const Submit = () => {
             })
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
-        console.log(data.username);
-        // .then((res) => {
-        //     console.log('Get requests: ', res);
-        // })
-        // .catch((err) => console.log(err));
-        // axios
-        //     .get('http://localhost:5000/profile')
-        //     .then((res) => setData(res))
-        //     .catch((err) => console.log(err));
-        // axios
-        //     .post('http://localhost:5000/profile/memories', { User: User.data })
-        //     .then((res) => console.log(res))
-        //     .catch((err) => console.log(err));
+
+        window.location = '/memories';
     };
 
+    // Handles input tags of new memories
     const handleInputChange = (e) => {
         e.persist();
         User.setData((i) => ({
