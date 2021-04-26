@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import keys from "./config/keys";
 
 // importing routes
-import authRoutes from "./routes/auth-routes";
+import googleRoutes from "./routes/google-routes";
 import userRoutes from "./routes/regular-routes";
 import profRoutes from "./routes/profile-routes";
 
@@ -39,7 +39,7 @@ mongoose.connect(
 );
 
 // routing
-app.use("/api", authRoutes);
+app.use("/google", googleRoutes);
 app.use("/user", userRoutes);
 app.use("/profile", profRoutes);
 

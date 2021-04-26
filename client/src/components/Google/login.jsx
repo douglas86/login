@@ -1,24 +1,19 @@
 import { GoogleLogin } from "react-google-login";
-import axios from "axios";
 
-const localhost = process.env.REACT_APP_LOCALHOST;
-
-const handleSubmit = (googleData) => {
-  console.log(googleData);
-  axios
-    .post(`${localhost}/api/google`, { googleInfo: googleData })
-    .then((res) => console.log(res.data))
-    .catch((err) => console.log(err));
-};
+import { Provider } from "./Context.jsx";
+import Submit from "./Submit";
 
 const Login = () => {
+  const { handleSubmit } = Submit();
   return (
     <div>
-      <GoogleLogin
-        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-        buttonText="Sign in with Google"
-        onSuccess={handleSubmit}
-      />
+      <Provider>
+        <GoogleLogin
+          clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+          buttonText="Sign in with Google"
+          onSuccess={handleSubmit}
+        />
+      </Provider>
     </div>
   );
 };
