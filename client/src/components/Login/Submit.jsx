@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { Context } from "./Context";
 import axios from "axios";
 
+const localhost = process.env.REACT_APP_LOCALHOST;
+
 const Submit = () => {
   const User = useContext(Context);
 
   const handleSubmit = () => {
-    let url = "http://localhost:5000/profile/login";
+    let url = `${localhost}/profile/login`;
 
     // passing username and password to express
     axios

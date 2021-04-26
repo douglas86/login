@@ -4,7 +4,7 @@ const Istore = () => {
     return (
         <div>
             <Navbar />
-            <h3>Istore</h3>
+            <h3>Coming Soon!!</h3>
         </div>
     );
 };

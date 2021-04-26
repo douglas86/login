@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import { Context } from './Context';
 import axios from 'axios';
 
+const localhost = process.env.REACT_APP_LOCALHOST;
+
 const Submit = () => {
     const User = useContext(Context);
 
@@ -11,7 +13,7 @@ const Submit = () => {
         } else {
             alert('Passwords match');
             axios
-                .post('http://localhost:5000/user/regular', { user: User.data })
+                .post(`${localhost}/user/regular`, { user: User.data })
                 .then((res) => console.log(res.data))
                 // once post to db redirect to home page
                 .then((window.location = '/'))

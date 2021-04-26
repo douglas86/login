@@ -2,6 +2,8 @@ import { useContext, useState, useEffect } from 'react';
 import { Context } from './Context';
 import axios from 'axios';
 
+const localhost = process.env.REACT_APP_LOCALHOST;
+
 const Submit = () => {
     const User = useContext(Context);
     const [data, setData] = useState({});
@@ -9,7 +11,7 @@ const Submit = () => {
     // grabs the username from json file in express
     useEffect(() => {
         axios
-            .get('http://localhost:5000/profile')
+            .get(`${localhost}/profile`)
             .then((res) => setData(res.data))
             .catch((err) => console.log(err));
     }, []);
@@ -17,7 +19,7 @@ const Submit = () => {
     // Handle submit once button is clicked for creating new memeories
     const handleSubmit = () => {
         axios
-            .post('http://localhost:5000/profile/memories', {
+            .post(`${localhost}/profile/memories`, {
                 username: data.username,
                 User: User.data,
             })

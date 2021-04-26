@@ -18,6 +18,5 @@ Created an Input and Form component
 
 # Known bugs
 
--   Screen flashes when you are trying to enter your username or password
 -   It is not saving memories based on the current username
 -   It doesn't print the correct memory for the current username

@@ -4,7 +4,7 @@ const StudentDashboard = () => {
     return (
         <div>
             <Navbar />
-            <h3>Student</h3>
+            <h3>Coming Soon!!</h3>
         </div>
     );
 };

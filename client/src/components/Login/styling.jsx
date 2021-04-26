@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   form: {
-    marginTop: "3.5%",
+    marginTop: "3.0%",
     textAlign: "center",
   },
   inputs: {
