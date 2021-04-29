@@ -1,4 +1,4 @@
-import Form from "../Register/Form";
+import Form from "../Login/Register/Form";
 import useStyles from "./styles";
 
 const Register = () => {

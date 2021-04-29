@@ -1,10 +1,13 @@
 import express from "express";
 import User from "../model/google-users";
+import fs from "fs";
 
 const router = express.Router();
 
 router.post("/", (req, res) => {
-  let token = req.body.googleInfo.profileObj;
+  let token = req.body.profileObj;
+  let user = { username: token.googleId };
+  let data = JSON.stringify(user);
   // find data from db using google id
   User.findOne({
     googleId: token.googleId,
@@ -30,6 +33,7 @@ router.post("/", (req, res) => {
           res.send(newUser);
         });
     }
+    fs.writeFileSync("user.json", data);
   });
 });
 
